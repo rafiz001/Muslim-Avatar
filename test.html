@@ -6,5 +6,33 @@
 </script>
 
 </head>
+
 <body>
+
+<svg id="mysvg" width="500" height="500" version="1.1" viewBox="0 0 132.29 132.29" xmlns="http://www.w3.org/2000/svg">
+ <g>
+ 	<g id="bg">
+  <rect  id="bbg" style="fill:#000000;" width="132.29" height="132.29" rx="5.0863e-6" ry="0"/></g><g id="bgc">
+  <ellipse id="bbgc" cx="66.159" cy="66.609" rx="66.104" ry="66.065" style="fill:#fffaff;" fill-opacity=".34392"/></g>
+  <g><g id="face">
+   <ellipse id="fface" style="fill:#ffffa5;stroke: #002"  cx="68.923" cy="55.437" rx="22.74" ry="21.985" stroke-width=".70866"/></g>
+   <path id="tupi" d="m89.785 46.281s-17.968-12.483-41.921 0.66513c-0.06916-0.22258-0.1598-14.243-0.1598-14.243s20.721-21.698 41.921-0.66513c0.35245-0.58974 0.1598 14.243 0.1598 14.243z" style="fill:#fff;stroke: #000"  fill-rule="evenodd"  stroke-width=".61712"/>
+   
+   <g id="pan" style="fill:#ffffff;stroke: #000" fill-rule="evenodd" >
+    <path d="m89.958 84.667s-1.2318 8.1236 7.752 8.1236c-0.23543 0.69274 27.246-6.3049 26.951 38.817v0.35611l-11.978 2e-5s1.0875-15.546-5.5271-12.9l-0.4621 12.9h-82.352v-14.245s-5.9892-3.5611-5.9892 14.245l-10.481-2e-5v-0.35611c-0.3191-45.121 29.452-38.124 29.197-38.817 9.7325 0 10.555-8.1236 10.555-8.1236" stroke-width=".61712"/>
+    <path d="m47.86 84.896v-14.245s17.968 21.367 41.924 0c0.06666 0.22366 0 14.245 0 14.245s-20.962 21.367-41.924 0" stroke-width=".61712"/>
+    <path d="m73.819 93.927-0.10222 30.427h-10.481v-30.427s4.2333 1.3229 10.583-1e-6z" stroke-width=".55669"/>
+   </g>
+   <g id="bat">
+   <text  transform="matrix(.016104 .92388 -1.0819 .026239 0 0)" x="53.509644" y="-176.26768" font-family="sans-serif" font-size="7px"  style="line-height:0%" xml:space="preserve"><tspan id="bbat" x="106.58119" y="-58.551254" style="fill: #ff0000;stroke: #ff0000;line-height:1.25"  font-family="Couriar"  stroke-width=".3">MUSLIM</tspan></text>
+  </g>
+  </g>
+ </g>
+</svg>
+<script>
+const r = new Rune({ container: "body", width: 600, height: 600 }); 
+ r.save('myImage.jpg');
+
+let drawing = new xSVG('#mysvg'); 
+drawing.save();</script>
 </body></html>
