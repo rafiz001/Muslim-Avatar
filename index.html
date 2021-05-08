@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Muslim Avatar</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+
+        <style type="text/css">
+        	.hidden{
+        		display: none;
+        	}
+        	.down{
+        		background: #00f5b8;
+        	}
+        </style>
+</head>
+<body><span id="sc"><image >
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="mysvg" width="500" height="500" version="1.1" viewBox="0 0 132.29 132.29" xmlns="http://www.w3.org/2000/svg">
+ <g>
+ 	<g id="bg">
+  <rect  id="bbg" style="fill:#000000;" width="132.29" height="132.29" rx="5.0863e-6" ry="0"/></g><g id="bgc">
+  <ellipse id="bbgc" cx="66.159" cy="66.609" rx="66.104" ry="66.065" style="fill:#fffaff;" fill-opacity=".34392"/></g>
+  <g>
+   <path id="tupi" d="m89.785 46.281s-17.968-12.483-41.921 0.66513c-0.06916-0.22258-0.1598-14.243-0.1598-14.243s20.721-21.698 41.921-0.66513c0.35245-0.58974 0.1598 14.243 0.1598 14.243z" style="fill:#fff;stroke: #000"  fill-rule="evenodd"  stroke-width=".61712"/>
+   
+   <g id="pan" style="fill:#ffffff;stroke: #000" fill-rule="evenodd" >
+    <path d="m89.958 84.667s-1.2318 8.1236 7.752 8.1236c-0.23543 0.69274 27.246-6.3049 26.951 38.817v0.35611l-11.978 2e-5s1.0875-15.546-5.5271-12.9l-0.4621 12.9h-82.352v-14.245s-5.9892-3.5611-5.9892 14.245l-10.481-2e-5v-0.35611c-0.3191-45.121 29.452-38.124 29.197-38.817 9.7325 0 10.555-8.1236 10.555-8.1236" stroke-width=".61712"/>
+    <path d="m47.86 84.896v-14.245s17.968 21.367 41.924 0c0.06666 0.22366 0 14.245 0 14.245s-20.962 21.367-41.924 0" stroke-width=".61712"/>
+    <path d="m73.819 93.927-0.10222 30.427h-10.481v-30.427s4.2333 1.3229 10.583-1e-6z" stroke-width=".55669"/>
+   </g>
+   <g id="bat">
+   <text  transform="matrix(.016104 .92388 -1.0819 .026239 0 0)" x="53.509644" y="-176.26768" font-family="sans-serif" font-size="7px"  style="line-height:0%" xml:space="preserve"><tspan id="bbat" x="106.58119" y="-58.551254" style="fill: #ff0000;stroke: #ff0000;line-height:1.25"  font-family="Couriar"  stroke-width=".3">MUSLIM</tspan></text>
+  </g>
+  </g>
+ </g>
+</svg></image></span><div class="down">
+      
+      
+    </body>
+    <br>
+<a id="can" class="hidden" href="http://localhost" download="Muslim_Avatat.png">download</a>
+<label><input type="checkbox" onclick="bgF();"  id="bg0">No background</label><br>
+<label><input type="checkbox" onclick="bgc()" id="bgc0">No background-circle</label><br>
+
+
+<label><input type="checkbox" onclick="bat()" id="bat0">No Muslim Batch</label>
+<hr>
+<label><input type="color" oninput="colo('pan',this.value)">Panjabi color</label>
+<label><input type="color" oninput="colos('pan',this.value)">Panjabi border</label>
+<br>
+<label><input type="color" oninput="colo('tupi',this.value)">Tupi color</label>
+<label><input type="color" oninput="colos('tupi',this.value)">Tupi border</label>
+<br>
+
+
+<label><input type="color" oninput="colo('bbg',this.value)">Background color</label>
+<br>
+<label><input type="color" oninput="colo('bbgc',this.value)">Background circle color</label>
+<br>
+
+<label><input type="color" oninput="colos('bbat',this.value);colo('bbat',this.value);">Batch color</label>
+<br>
+<fieldset><legend>Download:</legend>
+ Width:<input type="number" id="pw" value="500">px<br>height: <input id="ph" type="number" value="500">px<br>
+            <button id="btn_export_png" onclick="getpng()">as PNG</button></fieldset>
+          
+
+
+</div><script type="text/javascript" src="umd.js"></script>
+<script type="text/javascript">
+function getpng(){
+    const canvas = document.querySelector('canvas');
+    const ctx = canvas.getContext('2d');
+    
+    v = canvg.Canvg.fromString(ctx, document.getElementById("mysvg").outerHTML);
+    var pw=document.getElementById("pw").value;
+    var ph=document.getElementById("ph").value;
+    
+    v.resize(pw, ph, 'xMidYMid meet');
+    
+    v.start();
+var dataURL = canvas.toDataURL();
+var dop=document.getElementById("can");
+dop.href=dataURL;
+dop.click();
+}
+
+
+</script>
+<canvas class="hidden" />
+
+
+
+<script type="text/javascript">
+	
+
+
+
+
+
+
+
+
+
+
+
+
+var bgi,bgci,facei,unamei,bati ="";
+function bgF(){
+	var bg0 = document.getElementById("bg0");
+	
+var bgg = document.getElementById("bg");
+	
+	
+
+if(bg0.checked){bgi = bgg.innerHTML;bgg.innerHTML='';}else{bgg.innerHTML=bgi;}	
+
+}
+function bgc(){
+	var bg0 = document.getElementById("bgc0");
+	
+var bgg = document.getElementById("bgc");
+	
+	
+
+if(bg0.checked){bgci = bgg.innerHTML;bgg.innerHTML='';}else{bgg.innerHTML=bgci;}	
+
+}
+
+
+function bat(){
+	var bg0 = document.getElementById("bat0");
+	
+var bgg = document.getElementById("bat");
+	
+	
+
+if(bg0.checked){bati = bgg.innerHTML;bgg.innerHTML='';}else{bgg.innerHTML=bati;}	
+
+}
+function bgF(){
+	var bg0 = document.getElementById("bg0");
+	
+var bgg = document.getElementById("bg");
+	
+	
+
+if(bg0.checked){bgi = bgg.innerHTML;bgg.innerHTML='';}else{bgg.innerHTML=bgi;}	
+
+}
+
+
+
+
+
+function colo(gid,coll){
+document.getElementById(gid).style.fill=coll;
+
+}
+function colos(gid,coll){
+document.getElementById(gid).style.stroke=coll;
+}
+//alert(document.getElementById("bbat").style.fill);
+
+
+
+
+
+</script>
+</body>
+</html>
