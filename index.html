@@ -13,10 +13,55 @@
         	.down{
         		background: #00f5b8;
         	}
+        	.rig{
+        		/*float: right;*/
+        	}
+        	
         </style>
 </head>
-<body><span id="sc"><image >
-<?xml version="1.0" encoding="UTF-8"?>
+<body onload="ren()"><img id="lp" height="200px" width="100%"><div class="rig down">
+	<fieldset><legend>Options:</legend>
+<label><input type="checkbox" onclick="bgF();"  id="bg0">No background</label><br>
+<label><input type="checkbox" onclick="bgc()" id="bgc0">No background-circle</label><br>
+
+
+<label><input type="checkbox" onclick="bat()" id="bat0">No Muslim Batch</label>
+
+      
+      
+    
+    </fieldset>
+<a id="can" class="hidden" href="http://localhost" download>download</a>
+<fieldset><legend>Color:</legend>
+<label><input type="color" oninput="colo('bbg',this.value)">Background color</label>
+<br>
+<label><input type="color" oninput="colo('bbgc',this.value)">Background circle color</label>
+<br>
+
+<label><input type="color" oninput="colos('bbat',this.value);colo('bbat',this.value);">Batch color</label>
+<br>
+<label><input type="color" oninput="colo('pan',this.value)">Panjabi color</label>
+<label><input type="color" oninput="colos('pan',this.value)">border</label>
+<br>
+<label><input type="color" oninput="colo('tupi',this.value)">Tupi color</label>
+<label><input type="color" oninput="colos('tupi',this.value)">border</label></fieldset>
+<br>
+
+
+
+<fieldset><legend>Download:</legend>
+ Width:<input type="number" id="pw" value="500">px<br>height: <input id="ph" type="number" value="500">px<br>
+            <button  onclick="getpng('image/png')">as PNG</button>
+        <button  onclick="getpng('image/jpeg')">as JPG</button>
+        <button  onclick="getsvg('image/jpeg')">as SVG</button></fieldset>
+          
+
+
+</div>
+
+
+<span id="sc" class="hidden">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg id="mysvg" width="500" height="500" version="1.1" viewBox="0 0 132.29 132.29" xmlns="http://www.w3.org/2000/svg">
  <g>
  	<g id="bg">
@@ -35,42 +80,9 @@
   </g>
   </g>
  </g>
-</svg></image></span><div class="down">
-      
-      
-    </body>
-    <br>
-<a id="can" class="hidden" href="http://localhost" download="Muslim_Avatat.png">download</a>
-<label><input type="checkbox" onclick="bgF();"  id="bg0">No background</label><br>
-<label><input type="checkbox" onclick="bgc()" id="bgc0">No background-circle</label><br>
-
-
-<label><input type="checkbox" onclick="bat()" id="bat0">No Muslim Batch</label>
-<hr>
-<label><input type="color" oninput="colo('pan',this.value)">Panjabi color</label>
-<label><input type="color" oninput="colos('pan',this.value)">Panjabi border</label>
-<br>
-<label><input type="color" oninput="colo('tupi',this.value)">Tupi color</label>
-<label><input type="color" oninput="colos('tupi',this.value)">Tupi border</label>
-<br>
-
-
-<label><input type="color" oninput="colo('bbg',this.value)">Background color</label>
-<br>
-<label><input type="color" oninput="colo('bbgc',this.value)">Background circle color</label>
-<br>
-
-<label><input type="color" oninput="colos('bbat',this.value);colo('bbat',this.value);">Batch color</label>
-<br>
-<fieldset><legend>Download:</legend>
- Width:<input type="number" id="pw" value="500">px<br>height: <input id="ph" type="number" value="500">px<br>
-            <button id="btn_export_png" onclick="getpng()">as PNG</button></fieldset>
-          
-
-
-</div><script type="text/javascript" src="umd.js"></script>
+</svg></span><script type="text/javascript" src="umd.js"></script>
 <script type="text/javascript">
-function getpng(){
+function getpng(mime){
     const canvas = document.querySelector('canvas');
     const ctx = canvas.getContext('2d');
     
@@ -81,22 +93,32 @@ function getpng(){
     v.resize(pw, ph, 'xMidYMid meet');
     
     v.start();
-var dataURL = canvas.toDataURL();
+
+var dataURL = canvas.toDataURL(mime);
 var dop=document.getElementById("can");
 dop.href=dataURL;
 dop.click();
 }
-
+function getsvg(){
+	var sdata=document.getElementById("sc").innerHTML;
+	var dop=document.getElementById("can");
+	dop.href="data:image/svg+xml;base64,"+btoa(sdata);
+	alert("The value of svg height and width is fixed for this output and this is 500x500");
+dop.click();
+}
 
 </script>
+
 <canvas class="hidden" />
 
 
 
 <script type="text/javascript">
 	
+function ren(){
+document.getElementById("lp").src="data:image/svg+xml;base64,"+btoa(document.getElementById("mysvg").outerHTML);
 
-
+}
 
 
 
@@ -116,6 +138,7 @@ var bgg = document.getElementById("bg");
 	
 
 if(bg0.checked){bgi = bgg.innerHTML;bgg.innerHTML='';}else{bgg.innerHTML=bgi;}	
+ren();
 
 }
 function bgc(){
@@ -126,7 +149,7 @@ var bgg = document.getElementById("bgc");
 	
 
 if(bg0.checked){bgci = bgg.innerHTML;bgg.innerHTML='';}else{bgg.innerHTML=bgci;}	
-
+ren();
 }
 
 
@@ -138,7 +161,7 @@ var bgg = document.getElementById("bat");
 	
 
 if(bg0.checked){bati = bgg.innerHTML;bgg.innerHTML='';}else{bgg.innerHTML=bati;}	
-
+ren();
 }
 function bgF(){
 	var bg0 = document.getElementById("bg0");
@@ -148,7 +171,7 @@ var bgg = document.getElementById("bg");
 	
 
 if(bg0.checked){bgi = bgg.innerHTML;bgg.innerHTML='';}else{bgg.innerHTML=bgi;}	
-
+ren();
 }
 
 
@@ -157,12 +180,12 @@ if(bg0.checked){bgi = bgg.innerHTML;bgg.innerHTML='';}else{bgg.innerHTML=bgi;}
 
 function colo(gid,coll){
 document.getElementById(gid).style.fill=coll;
-
+ren();
 }
 function colos(gid,coll){
 document.getElementById(gid).style.stroke=coll;
+ren();
 }
-//alert(document.getElementById("bbat").style.fill);
 
 
 
